@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <section class="local-video">
+            <video src="" id="local_video"  autoplay class="local-video__content"></video>
+        </section>
+        <section class="remote-video">
+            <video src="" id="remote_video"  autoplay class="remote-video__content"></video>
+        </section>
+        <div class="other" id="other">
+            <section class="connect">
+                <p class="connect__title">Your personal code</p>
+                <div class="connect-paragraph">
+                    <p class="connect-paragraph__code" id="local_id">IDDD</p>
+                    <span class="connect-paragraph__copy" id="copy_btn"><i class="far fa-clone"></i></span>
+                </div>
+                <p class="connect__title">Callee code</p>
+                <div class="connect-paragraph">
+                    <input type="text" class="connect-paragraph__input" id="remote_id" placeholder="Enter callee code">
+                    <div class="connect-paragraph__button" id="connect_btn">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                </div>
+            </section>
+            <section class="functional" id="functional">
+                <div class="functional__button functional__mute">
+                    <i class="fas fa-microphone functional__button--icon"></i>
+                </div>
+                <div class="functional__button functional__share-screen" id="share_screen_btn">
+                    <i class="fas fa-external-link-alt functional__button--icon"></i>
+                </div>
+                <div class="functional__button functional__hangup" id="hangup_btn">
+                    <i class="fas fa-times functional__button--icon"></i>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+        <div style="display: none;">
+            <p>Self id ->&nbsp;<span id="local_id"></span></p>
+            <div>
+                <p>
+                    Other id
+                </p>
+                <input type="text" name="" id="other_id">
+                <button id="connect_btn">Connect</button>
+                <button id="hangup_btn"><i class="fas fa-phone-slash"></i>Hang up</button>
+            </div>
+
+            <section class="video">
+                <div class="video_self">
+                    <p>Self video</p>
+                    <video src="" id="local_video" muted autoplay class="show_video"></video>
+
+                </div>
+                <div class="video_other">
+                    <p>Other Video</p>
+                    <video src="" id="remote_video" muted autoplay class="show_video"></video>
+
+                </div>
+
+            </section>
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/element.js" type="module"></script>
+    <script src="./js/store.js" type="module"></script>
+    <script src="./js/wss.js" type="module"></script>
+    <script src="./js/webrtc.js" type="module"></script>
+    <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>

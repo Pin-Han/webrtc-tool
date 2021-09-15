@@ -10,8 +10,19 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
+  // res.status(200).json({
+  //   status: 'success',
+  //   data: 'Hello cubo' 
+  // });
+
   res.sendFile(`${__dirname}/public/index.html`);
 })
+
+app.use((req, res, next) => {
+
+  console.log('Hello connection successfully');
+  next();
+});
 
 let connectedPeers = [];
 
@@ -81,5 +92,7 @@ io.on('connection', (socket) => {
 })
 
 server.listen(PORT, () => {
+  console.log('io',io)
+
   console.log(`listening on ${PORT}`);
 })

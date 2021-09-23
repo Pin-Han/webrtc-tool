@@ -172,3 +172,7 @@ const closePeerConnectionAndResetState = () => {
   connectedUserInfo = null;
   element.toggleFunctionalElement(false)
 };
+
+export const muted = ()=>{
+  store.getState().localStream.getAudioTracks()[0].enabled = !store.getState().localStream.getAudioTracks()[0].enabled;
+}

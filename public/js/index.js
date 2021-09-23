@@ -22,7 +22,18 @@ document.getElementById('hangup_btn').addEventListener('click',()=>{
   webrtc.handleHangUp()
 })
 
-document.getElementById('share_screen_btn').addEventListener('click' , () =>{
+// document.getElementById('share_screen_btn').addEventListener('click' , () =>{
 
+// })
+
+document.getElementById('mute_btn').addEventListener('click', ()=>{
+  webrtc.muted()
+  document.getElementById('mute_btn').classList.add('display-none');
+  document.getElementById('unmute_btn').classList.remove('display-none')
 })
+document.getElementById('unmute_btn').addEventListener('click', ()=>{
+  webrtc.muted()
 
+  document.getElementById('unmute_btn').classList.add('display-none');
+  document.getElementById('mute_btn').classList.remove('display-none')
+})

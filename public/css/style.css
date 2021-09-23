@@ -192,3 +192,11 @@ p {
 .functional__hangup {
     background-color: firebrick;
 }
+
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}

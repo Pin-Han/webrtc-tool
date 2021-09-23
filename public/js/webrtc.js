@@ -1,5 +1,5 @@
 import * as element from './element.js';
-import * as wss from './wss.js';
+import * as wss from './wss.js.js';
 import * as store from './store.js';
 
 let connectedUserInfo;

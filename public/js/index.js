@@ -1,5 +1,5 @@
 import * as webrtc from './webrtc.js'
-import * as wss from './wss.js'
+import * as wss from './wss.js.js'
 
 const socket = io("/");
 wss.registerSocketEvents(socket)
